@@ -1,11 +1,10 @@
 ﻿InitialOperation();
 
-
 void InitialOperation()
 {
     while (true)
     {
-        Console.WriteLine("Enter the desired operation");
+        Console.WriteLine("Enter the desired operation:");
         Console.WriteLine("1 - Create List");
         Console.WriteLine("2 - Edit List");
         var desiredOperation = Console.ReadLine();
@@ -18,7 +17,6 @@ void InitialOperation()
     }
 }
 
-
 void OperationCreateList()
 {
     Console.WriteLine("Name: ");
@@ -28,12 +26,11 @@ void OperationCreateList()
     InitialOperation();
 }
 
-
 void OperationEditList()
 {
     while (true)
     {
-        Console.WriteLine("Enter the desired operation");
+        Console.WriteLine("Enter the desired operation:");
         Console.WriteLine("1 - Add Items");
         Console.WriteLine("2 - Edit Items");
         var desiredOperation = Console.ReadLine();
