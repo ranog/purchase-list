@@ -2,7 +2,7 @@ namespace Model;
 
 public enum ProductCategory
 {
-    Marketplace,
+    Marketplace = 1,
     Office,
     Maintenance,
 }
