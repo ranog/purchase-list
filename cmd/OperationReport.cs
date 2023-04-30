@@ -13,18 +13,23 @@ public static class OperationReport{
             InitialOperation.Execute();
         }
         var totalInReaisOfTheProducts = wishList.Products.Sum(p => p.AmountPaid);
-        var totalInMarketplaceReais = wishList.Products
-            .Where(p => p.ProductCategory == Model.ProductCategory.Marketplace).Sum(p => p.AmountPaid);
-        var totalInOfficeReais = wishList.Products
-            .Where(p => p.ProductCategory == Model.ProductCategory.Office).Sum(p => p.AmountPaid);
-        var totalInMaintenanceReais = wishList.Products
-            .Where(p => p.ProductCategory == Model.ProductCategory.Maintenance).Sum(p => p.AmountPaid);
+        var totalInMarketplaceReais =
+            wishList.Products
+                .Where(p => p.ProductCategory == Model.ProductCategory.Marketplace).Sum(p => p.AmountPaid);
+        var totalInOfficeReais =
+            wishList.Products
+                .Where(p => p.ProductCategory == Model.ProductCategory.Office).Sum(p => p.AmountPaid);
+        var totalInMaintenanceReais =
+            wishList.Products
+                .Where(p => p.ProductCategory == Model.ProductCategory.Maintenance).Sum(p => p.AmountPaid);
         var totalNumberOfProductsNotPurchased = wishList.Products.Where(p => !p.Bought).Count();
 
-        Console.WriteLine($"Total in reais {totalInReaisOfTheProducts}.");
-        Console.WriteLine($"Total in marketplace {totalInMarketplaceReais}.");
-        Console.WriteLine($"total in office {totalInOfficeReais}.");
-        Console.WriteLine($"Total in maintenance {totalInMaintenanceReais}.");
+        Console.WriteLine($"Total in reais {totalInReaisOfTheProducts};");
+        Console.WriteLine($"Total in marketplace {totalInMarketplaceReais};");
+        Console.WriteLine($"total in office {totalInOfficeReais};");
+        Console.WriteLine($"Total in maintenance {totalInMaintenanceReais};");
         Console.WriteLine($"Total products not purchased {totalNumberOfProductsNotPurchased}.");
+
+        InitialOperation.Execute();
     }
 }
