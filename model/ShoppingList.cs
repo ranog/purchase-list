@@ -8,6 +8,11 @@ public class ShoppingList
 
     public ShoppingList(string name, DateTime desiredDateOfPurchase)
     {
+        if(string.IsNullOrEmpty(name))
+            throw new ArgumentException("Invalid name.");
+        if(desiredDateOfPurchase == DateTime.MinValue)
+            throw new ArgumentException("Invalid date.");
+
         Name = name;
         DesiredDateOfPurchase = desiredDateOfPurchase;
     }
