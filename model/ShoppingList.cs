@@ -1,6 +1,6 @@
 namespace Model;
 
-public class ShoppingList : BasicModel
+public class ShoppingList : BaseModel
 {
     public readonly string Name;
     public DateTime DesiredDateOfPurchase { get; private set; }

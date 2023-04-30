@@ -17,8 +17,12 @@ public static class OperationAddProduct{
         var productName = Console.ReadLine();
         Console.WriteLine($"Product category ({(int)ProductCategory.Marketplace} - {ProductCategory.Marketplace}, {(int)ProductCategory.Office} - {ProductCategory.Office}, {(int)ProductCategory.Maintenance} - {ProductCategory.Maintenance}): ");
         var consoleProductCategory = Console.ReadLine();
-        var productCategory = (ProductCategory)Enum.Parse(typeof(ProductCategory), consoleProductCategory);
-        var product = new Product(name: productName, productCategory: productCategory);
-        wishList.AddProduct(product);
+        Enum.TryParse<ProductCategory>(consoleProductCategory, out ProductCategory productCategory);
+        var product = new Product(productName, productCategory);
+        if(!product.Valid())
+            foreach(var item in product.Errors)
+                Console.WriteLine(item);
+        else
+            wishList.AddProduct(product);
     }
 }

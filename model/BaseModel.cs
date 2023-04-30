@@ -1,6 +1,6 @@
 namespace Model;
 
-public abstract class BasicModel{
+public abstract class BaseModel{
 
     public List<string> Errors { get; set; } = new List<string>();
 

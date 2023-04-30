@@ -7,7 +7,7 @@ public enum ProductCategory
     Maintenance,
 }
 
-public class Product
+public class Product : BaseModel
 {
     public string Name { get; private set; } = default!;
     public ProductCategory ProductCategory { get; private set; }
@@ -16,6 +16,9 @@ public class Product
 
     public Product(string name, ProductCategory productCategory)
     {
+        AddValidation(string.IsNullOrEmpty(name), "Invalid name.");
+        AddValidation(!ProductCategory.IsDefined(productCategory), "Invalid product category.");
+
         Name = name;
         ProductCategory = productCategory;
     }
