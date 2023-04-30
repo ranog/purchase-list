@@ -19,6 +19,8 @@ enum ListOption
     EditList,
     [Description("Get Lists")]
     GetLists,
+    [Description("Report")]
+    Report,
 }
 
 public static class EnumExtensions
