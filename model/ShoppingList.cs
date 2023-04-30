@@ -1,6 +1,6 @@
 namespace Model;
 
-public class ShoppingList
+public class ShoppingList : BasicModel
 {
     public readonly string Name;
     public DateTime DesiredDateOfPurchase { get; private set; }
@@ -8,10 +8,8 @@ public class ShoppingList
 
     public ShoppingList(string name, DateTime desiredDateOfPurchase)
     {
-        if(string.IsNullOrEmpty(name))
-            throw new ArgumentException("Invalid name.");
-        if(desiredDateOfPurchase == DateTime.MinValue)
-            throw new ArgumentException("Invalid date.");
+        AddValidation(string.IsNullOrEmpty(name), "Invalid name.");
+        AddValidation(desiredDateOfPurchase == DateTime.MinValue, "Invalid date.");
 
         Name = name;
         DesiredDateOfPurchase = desiredDateOfPurchase;
