@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: format-code
+        name: Format code
+        entry: dotnet format --fix-style
+        language: system
+        types:
+          - file
