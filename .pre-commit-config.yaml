@@ -3,7 +3,7 @@ repos:
     hooks:
       - id: format-code
         name: Format code
-        entry: dotnet format --fix-style
+        entry: dotnet-format --include
         language: system
         types:
           - file
