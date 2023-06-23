@@ -3,3 +3,4 @@ repos:
     rev: v5.1.225507
     hooks:
       - id: dotnet-format
+        entry: dotnet-format --fix-whitespace
