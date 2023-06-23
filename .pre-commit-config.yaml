@@ -1,8 +1,8 @@
 repos:
   - repo: local
     hooks:
-      - id: format-code
-        name: Format code
+      - id: dotnet-format
+        name: dotnet-format
         entry: dotnet-format --include
         language: system
         types:
