@@ -9,7 +9,7 @@ public static class RepositoryList{
         _shoppingLists.Add(shoppingList);
     }
 
-    public static List<ShoppingList> GetAll(){
+    public static List<ShoppingList> GetAll() {
         return _shoppingLists;
     }
 }
